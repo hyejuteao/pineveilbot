@@ -1,0 +1,279 @@
+/* Custom styles for Anonymous Bot Admin Panel */
+
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --secondary-color: #6c757d;
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
+}
+
+body {
+    background-color: var(--light-gray);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Feather icon sizing */
+.feather-sm {
+    width: 16px;
+    height: 16px;
+}
+
+.feather-lg {
+    width: 32px;
+    height: 32px;
+}
+
+.feather-xl {
+    width: 48px;
+    height: 48px;
+}
+
+/* Anonymous ID styling */
+.anon-id {
+    background-color: #e7f3ff;
+    color: var(--primary-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Message preview */
+.message-preview {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #495057;
+}
+
+/* Conversation styles */
+.conversation-card {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.message-bubble {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.message-incoming {
+    justify-content: flex-start;
+}
+
+.message-outgoing {
+    justify-content: flex-end;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.message-incoming .message-content {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    margin-right: auto;
+}
+
+.message-outgoing .message-content {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: auto;
+}
+
+.message-text {
+    margin-bottom: 0.25rem;
+    word-wrap: break-word;
+}
+
+.message-meta {
+    opacity: 0.7;
+    font-size: 0.75rem;
+}
+
+.message-outgoing .message-meta {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Card enhancements */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+/* Table improvements */
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Button enhancements */
+.btn {
+    border-radius: 0.375rem;
+    font-weight: 500;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Badge styles */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.025em;
+}
+
+/* Alert improvements */
+.alert {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+/* Form enhancements */
+.form-control {
+    border-radius: 0.375rem;
+    border: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Navbar styling */
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .message-content {
+        max-width: 85%;
+    }
+    
+    .conversation-card {
+        height: 400px;
+    }
+    
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+    
+    .message-preview {
+        max-width: 200px;
+    }
+}
+
+/* Loading states */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Sticky positioning for reply form */
+.sticky-top {
+    position: sticky;
+    z-index: 1020;
+}
+
+/* Empty state styling */
+.text-center .feather-xl {
+    opacity: 0.3;
+}
+
+/* Code block styling */
+code {
+    font-size: 0.875em;
+    background-color: rgba(13, 110, 253, 0.1);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+}
+
+/* Success/Error states */
+.alert-success {
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    color: #0f5132;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    color: #842029;
+}
+
+/* Scrollbar styling for webkit browsers */
+.conversation-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.conversation-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.conversation-body::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.conversation-body::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Animation for new messages */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.message-incoming .message-content {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.message-outgoing .message-content {
+    animation: slideInRight 0.3s ease-out;
+}
