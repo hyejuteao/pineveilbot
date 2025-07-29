@@ -1,16 +1,13 @@
 services:
   - type: web
-    name: pineveil-bot
+    name: pineveilbot
     env: python
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: python main.py
-    plan: free
-    region: oregon
-    runtime: python
-    build:
-      pythonVersion: 3.10
     envVars:
       - key: TELEGRAM_BOT_TOKEN
-        sync: false
+        value: "seu_token_aqui"
       - key: ADMIN_CHAT_ID
-        sync: false
+        value: "seu_chat_id_aqui"
+pythonVersion: 3.10.0
